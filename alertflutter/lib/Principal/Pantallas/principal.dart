@@ -19,7 +19,7 @@ class _PrincipalState extends State<Principal> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             RaisedButton(
-                child: Text("Mostrar Alerta"),
+                child: Text("Mostrar Alertas"),
                 onPressed: () {
                   _mostrarAlerta(context);
 
