@@ -12,7 +12,7 @@ class _PrincipalState extends State<Principal> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Alert Dialogos"),
+          title: Text("Alert Dialog"),
         ),
         body: Center(
             child: Column(
