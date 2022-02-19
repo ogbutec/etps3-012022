@@ -19,7 +19,7 @@ class AppRoute extends StatelessWidget {
           child: Container(
             child: Text(
               "Practica previa a examen",
-              style: TextStyle(fontSize: 25, fontFamily: 'Roboto'),
+              style: TextStyle(fontSize: 20, fontFamily: 'Roboto'),
             ),
           ),
         ),
