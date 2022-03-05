@@ -10,6 +10,8 @@ class PaginaPrincipal extends StatefulWidget {
 }
 
 class _PaginaPrincipalState extends State<PaginaPrincipal> {
+  int activoMenu1 = 0;
+  int activoMenu2 = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,34 +49,225 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
 
   Widget bodyAppSpf() {
     return SingleChildScrollView(
-        child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          //crossAxisAlignment: CrossAxisAlignment.start,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 30, top: 20),
-            child: Row(
-                children: List.generate(song_type_1.length, (index) {
-              return Padding(
-                padding: const EdgeInsets.only(right: 25),
-                child: Column(
-                  children: [
-                    Text(
-                      song_type_1[index],
-                      style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600),
-                    )
-                  ],
-                ),
-              );
-            })),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            //crossAxisAlignment: CrossAxisAlignment.start,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 30, top: 20),
+              child: Row(
+                  children: List.generate(song_type_1.length, (index) {
+                return Padding(
+                  padding: const EdgeInsets.only(right: 25),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        activoMenu1 = index;
+                      });
+                    },
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          song_type_1[index],
+                          style: TextStyle(
+                              //color: Colors.grey,
+                              fontSize: 15,
+                              color: activoMenu1 == index
+                                  ? Colors.green
+                                  : Colors.grey,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(
+                          height: 3,
+                        ),
+                        activoMenu1 == index
+                            ? Container(
+                                width: 10,
+                                height: 3,
+                                decoration: BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.circular(5)),
+                              )
+                            : Container()
+                      ],
+                    ),
+                  ),
+                );
+              })),
+            ),
           ),
-        )
-      ],
-    ));
+          SizedBox(
+            height: 20,
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 30),
+              child: Row(
+                  children: List.generate(song.length, (index) {
+                return Padding(
+                  padding: const EdgeInsets.only(right: 30),
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Column(
+                      children: [
+                        Container(
+                          width: 180,
+                          height: 180,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: NetworkImage(song[index]['img']),
+                                  fit: BoxFit.cover),
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(10)),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          song[index]['title'],
+                          style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          width: 180,
+                          child: Text(
+                            song[index]['descriptions'],
+                            maxLines: 1,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                );
+              })),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            //crossAxisAlignment: CrossAxisAlignment.start,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 30, top: 20),
+              child: Row(
+                  children: List.generate(song_type_2.length, (index) {
+                return Padding(
+                  padding: const EdgeInsets.only(right: 25),
+                  child: GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        activoMenu1 = index;
+                      });
+                    },
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          song_type_2[index],
+                          style: TextStyle(
+                              //color: Colors.grey,
+                              fontSize: 15,
+                              color: activoMenu2 == index
+                                  ? Colors.green
+                                  : Colors.grey,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(
+                          height: 3,
+                        ),
+                        activoMenu2 == index
+                            ? Container(
+                                width: 10,
+                                height: 3,
+                                decoration: BoxDecoration(
+                                    color: Colors.green,
+                                    borderRadius: BorderRadius.circular(5)),
+                              )
+                            : Container()
+                      ],
+                    ),
+                  ),
+                );
+              })),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+
+//segundo bloque
+
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 30),
+              child: Row(
+                  children: List.generate(song.length, (index) {
+                return Padding(
+                  padding: const EdgeInsets.only(right: 30),
+                  child: GestureDetector(
+                    onTap: () {},
+                    child: Column(
+                      children: [
+                        Container(
+                          width: 180,
+                          height: 180,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: NetworkImage(song[index]['img']),
+                                  fit: BoxFit.cover),
+                              color: Colors.green,
+                              borderRadius: BorderRadius.circular(10)),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          song[index]['title'],
+                          style: TextStyle(
+                              fontSize: 15,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Container(
+                          width: 180,
+                          child: Text(
+                            song[index]['descriptions'],
+                            maxLines: 1,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                );
+              })),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
