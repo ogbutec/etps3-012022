@@ -107,7 +107,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
             child: Padding(
               padding: const EdgeInsets.only(left: 30),
               child: Row(
-                  children: List.generate(song.length, (index) {
+                  children: List.generate(songs.length, (index) {
                 return Padding(
                   padding: const EdgeInsets.only(right: 30),
                   child: GestureDetector(
@@ -119,7 +119,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                           height: 180,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: NetworkImage(song[index]['img']),
+                                  image: NetworkImage(songs[index]['img']),
                                   fit: BoxFit.cover),
                               color: Colors.green,
                               borderRadius: BorderRadius.circular(10)),
@@ -128,7 +128,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                           height: 20,
                         ),
                         Text(
-                          song[index]['title'],
+                          songs[index]['title'],
                           style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,
@@ -140,7 +140,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                         Container(
                           width: 180,
                           child: Text(
-                            song[index]['descriptions'],
+                            songs[index]['descriptions'],
                             maxLines: 1,
                             textAlign: TextAlign.center,
                             style: TextStyle(
@@ -217,7 +217,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
             child: Padding(
               padding: const EdgeInsets.only(left: 30),
               child: Row(
-                  children: List.generate(song.length, (index) {
+                  children: List.generate(songs.length, (index) {
                 return Padding(
                   padding: const EdgeInsets.only(right: 30),
                   child: GestureDetector(
@@ -229,7 +229,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                           height: 180,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: NetworkImage(song[index]['img']),
+                                  image: NetworkImage(songs[index]['img']),
                                   fit: BoxFit.cover),
                               color: Colors.green,
                               borderRadius: BorderRadius.circular(10)),
@@ -238,7 +238,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                           height: 20,
                         ),
                         Text(
-                          song[index]['title'],
+                          songs[index]['title'],
                           style: TextStyle(
                               fontSize: 15,
                               color: Colors.white,
@@ -250,7 +250,7 @@ class _PaginaPrincipalState extends State<PaginaPrincipal> {
                         Container(
                           width: 180,
                           child: Text(
-                            song[index]['descriptions'],
+                            songs[index]['descriptions'],
                             maxLines: 1,
                             textAlign: TextAlign.center,
                             style: TextStyle(
