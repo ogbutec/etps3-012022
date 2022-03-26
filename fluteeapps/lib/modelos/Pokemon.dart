@@ -1,11 +1,11 @@
+import 'package:flutter/material.dart';
+
 class Pokemon {
-  String nombre;
-  String url;
-  Pokemon(
-    this.nombre,
-    this.url,
-  ) {
-    nombre = nombre;
-    url = url;
+  String name = "";
+  String img = "";
+
+  Pokemon(name, img) {
+    this.name = name;
+    this.img = img;
   }
 }
