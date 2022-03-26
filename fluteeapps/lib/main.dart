@@ -50,7 +50,7 @@ class _WebFlutterState extends State<WebFlutter> {
           return ListView(
             children: _listadoPokemons(snapshot.data),
           );
-        } else {
+        } else if (snapshot.hasError) {
           print(snapshot.error);
           return Text("Error");
         }
