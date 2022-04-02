@@ -4,8 +4,8 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
-  runApp(FireBaseFlutter());
+  Firebase.initializeApp().then((value) {runApp(FireBaseFlutter());});
+  
 }
 
 class FireBaseFlutter extends StatelessWidget {
