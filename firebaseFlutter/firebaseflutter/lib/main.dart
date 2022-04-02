@@ -4,8 +4,9 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp().then((value) {runApp(FireBaseFlutter());});
-  
+  Firebase.initializeApp().then((value) {
+    runApp(FireBaseFlutter());
+  });
 }
 
 class FireBaseFlutter extends StatelessWidget {
@@ -13,7 +14,13 @@ class FireBaseFlutter extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: AppFlut(),
+    );
   }
 }
 
@@ -44,6 +51,13 @@ class AppFlut extends StatefulWidget {
 class _AppFlutState extends State<AppFlut> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter Demo'),
+      ),
+      body: Center(
+        child: Text('Hello World'),
+      ),
+    );
   }
 }
