@@ -5,7 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp().then((value) {
-    runApp(FireBaseFlutter());
+    runApp(const FireBaseFlutter());
   });
 }
 
@@ -26,7 +26,7 @@ class FireBaseFlutter extends StatelessWidget {
 
 @override
 void initState() {
-  //super.initState();
+  // super.initState();
   getUsuario();
 }
 
@@ -34,7 +34,7 @@ void getUsuario() async {
   CollectionReference collectionReference =
       FirebaseFirestore.instance.collection('usuarios');
   QuerySnapshot usuarios = await collectionReference.get();
-  if (usuarios.docs.length != 0) {
+  if (usuarios.docs.isNotEmpty) {
     for (var docu in usuarios.docs) {
       print(docu.data());
     }
