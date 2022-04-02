@@ -5,13 +5,11 @@ import 'package:firebase_core/firebase_core.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Firebase.initializeApp().then((value) {
-    runApp(const FireBaseFlutter());
+    runApp(FireBaseFlutter());
   });
 }
 
 class FireBaseFlutter extends StatelessWidget {
-  const FireBaseFlutter({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,31 +22,32 @@ class FireBaseFlutter extends StatelessWidget {
   }
 }
 
-@override
-void initState() {
-  // super.initState();
-  getUsuario();
-}
-
 void getUsuario() async {
+  List usuars = [];
   CollectionReference collectionReference =
-      FirebaseFirestore.instance.collection('usuarios');
+      FirebaseFirestore.instance.collection("usuarios");
   QuerySnapshot usuarios = await collectionReference.get();
   if (usuarios.docs.isNotEmpty) {
     for (var docu in usuarios.docs) {
+      // ignore: avoid_print
+      //usuars.add(docu.data());
       print(docu.data());
     }
   }
 }
 
 class AppFlut extends StatefulWidget {
-  AppFlut({Key? key}) : super(key: key);
-
   @override
   State<AppFlut> createState() => _AppFlutState();
 }
 
 class _AppFlutState extends State<AppFlut> {
+  @override
+  void initState() {
+    super.initState();
+    getUsuario();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
