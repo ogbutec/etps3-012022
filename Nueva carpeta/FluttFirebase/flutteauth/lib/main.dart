@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'Principal/Home.dart';
 import 'Principal/PantallaLogin.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class FlutterAuth extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: PantallaLogin(),
+      home: Home(),
     );
   }
 }
