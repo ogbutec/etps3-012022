@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "265177108059",
+    "project_id": "fir-analisis-aade9",
+    "storage_bucket": "fir-analisis-aade9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265177108059:android:721aad4a529cb9d4f6b97e",
+        "android_client_info": {
+          "package_name": "app.etps3.flutteauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265177108059-15hpe0ckkkecagu7bv00ngkp5h04avfl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqvIvJf7aTsGh2OYTelAGGT99kkAh5Qmw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "265177108059-15hpe0ckkkecagu7bv00ngkp5h04avfl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
