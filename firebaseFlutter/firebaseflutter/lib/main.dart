@@ -30,8 +30,9 @@ void getUsuario() async {
   if (usuarios.docs.isNotEmpty) {
     for (var docu in usuarios.docs) {
       // ignore: avoid_print
-      //usuars.add(docu.data());
-      print(docu.data());
+      usuars.add(docu.data());
+
+      //print(docu.data());
     }
   }
 }
