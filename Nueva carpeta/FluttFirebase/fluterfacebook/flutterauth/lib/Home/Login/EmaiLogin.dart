@@ -13,10 +13,30 @@ class _EmailLogingState extends State<EmailLoging> {
   final _correoController = TextEditingController();
   final _passController = TextEditingController();
   _IniciarSession() async {
-    FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: _correoController.text, password: _passController.text);
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => Principal()));
+    try {
+      FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: _correoController.text, password: _passController.text);
+      Navigator.of(context)
+          .push(MaterialPageRoute(builder: (context) => Principal()));
+    } on FirebaseAuthException catch (e) {
+      var mensaje = "";
+      switch (e.code) {
+        case "auth/invalid-email":
+          mensaje = "El correo no es valido";
+          break;
+        case "auth/user-disabled":
+          mensaje = "El usuario esta deshabilitado";
+          break;
+        case "auth/user-not-found":
+          mensaje = "El usuario no existe";
+          break;
+        case "auth/wrong-password":
+          mensaje = "La contraseña es incorrecta";
+          break;
+        default:
+          mensaje = "Error desconocido";
+      }
+    }
   }
 
   @override
