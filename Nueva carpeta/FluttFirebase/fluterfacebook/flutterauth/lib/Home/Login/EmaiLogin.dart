@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutterauth/Home/Principal.dart';
 
 class EmailLoging extends StatefulWidget {
   EmailLoging({Key? key}) : super(key: key);
@@ -14,6 +15,8 @@ class _EmailLogingState extends State<EmailLoging> {
   _IniciarSession() async {
     FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _correoController.text, password: _passController.text);
+    Navigator.of(context)
+        .push(MaterialPageRoute(builder: (context) => Principal()));
   }
 
   @override
