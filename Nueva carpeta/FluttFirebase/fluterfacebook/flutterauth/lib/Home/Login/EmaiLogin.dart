@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class EmailLoging extends StatefulWidget {
@@ -11,7 +12,8 @@ class _EmailLogingState extends State<EmailLoging> {
   final _correoController = TextEditingController();
   final _passController = TextEditingController();
   _IniciarSession() {
-    FirebaseAuth.instance.
+    FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: _correoController.text, password: _passController.text);
   }
 
   @override

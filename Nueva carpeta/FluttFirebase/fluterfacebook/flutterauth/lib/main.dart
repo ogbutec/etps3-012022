@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'Home/Login/EmaiLogin.dart';
 import 'Home/Principal.dart';
 
 void main() {
@@ -13,6 +14,9 @@ class FlutterAUTH extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Auth',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       home: EmailLoging(),
     );
   }
