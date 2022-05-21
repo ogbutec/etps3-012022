@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:265177108059:android:721aad4a529cb9d4f6b97e",
+        "mobilesdk_app_id": "1:265177108059:android:f08a436f94bf4437f6b97e",
         "android_client_info": {
-          "package_name": "app.etps3.flutteauth"
+          "package_name": "app.etps3.flutterauth"
         }
       },
       "oauth_client": [

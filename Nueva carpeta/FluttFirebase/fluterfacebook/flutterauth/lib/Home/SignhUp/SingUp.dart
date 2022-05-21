@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+/*
 class Singup extends StatefulWidget {
   Singup({Key? key}) : super(key: key);
 
@@ -24,3 +24,4 @@ class _SingupState extends State<Singup> {
         ]));
   }
 }
+*/

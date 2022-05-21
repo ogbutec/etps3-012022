@@ -14,8 +14,10 @@ class _EmailLogingState extends State<EmailLoging> {
   final _passController = TextEditingController();
   _IniciarSession() async {
     try {
-      FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: _correoController.text, password: _passController.text);
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: _correoController.text,
+          password: _passController.text);
+
       Navigator.of(context)
           .push(MaterialPageRoute(builder: (context) => Principal()));
     } on FirebaseAuthException catch (e) {
@@ -35,7 +37,25 @@ class _EmailLogingState extends State<EmailLoging> {
           break;
         default:
           mensaje = "Error desconocido";
+          print(_passController.toString().trim());
+          print(_correoController.toString().trim());
+          break;
       }
+      showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+                title: Text("Error"),
+                content: Text(mensaje),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('OK'),
+                  )
+                ]);
+          });
     }
   }
 
